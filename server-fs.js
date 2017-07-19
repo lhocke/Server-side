@@ -5,9 +5,11 @@ var fs = require("fs");
 var PORT = 7000;
 
 function handleRequest(req, res) {
-    var urlParts = url.parse(url.res);
+    console.log("running")
+    var urlParts = url.parse(req.url);
+    console.log("Url check: ", urlParts)
 
-    switch (urlParts.pathname) {
+    switch(urlParts.pathname) {
         case "/":
         displayIndex(urlParts.pathname, req, res)
         break;
