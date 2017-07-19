@@ -42,12 +42,12 @@ var http = require('http');
 var firstPORT = 7000;
 var secondPORT = 7500;
 
-function handleGoodRequest(response, result) {
-    response.end("You look great!")
+function handleGoodRequest(request, response) {
+    response.end("You look great!");
 };
 
-function handleBadRequest(response, result) {
-    response.end("You look awful!")
+function handleBadRequest(request, response) {
+    response.end("You look awful!");
 }
 
 var goodServer = http.createServer(handleGoodRequest);
