@@ -50,3 +50,9 @@ function displayFrameworks(url, req, res) {
         res.end(data);
     });
 }
+
+var server = http.createServer(handleRequest);
+
+server.listen(PORT, function() {
+    console.log("Listening at: http://localhost:%s", PORT)
+})
