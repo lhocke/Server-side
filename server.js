@@ -54,9 +54,9 @@ var goodServer = http.createServer(handleGoodRequest);
 var badServer = http.createServer(handleBadRequest);
 
 goodServer.listen(firstPORT, function() {
-    console.log("good server connected")
+    console.log("good server connected at: http://localhost:%s", firstPORT)
 })
 
 badServer.listen(secondPORT, function() {
-    console.log("bad server connected")
+    console.log("bad server connected at: http://localhost:%s", secondPORT)
 })
