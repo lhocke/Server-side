@@ -5,9 +5,7 @@ var fs = require("fs");
 var PORT = 7000;
 
 function handleRequest(req, res) {
-    console.log("running")
     var urlParts = url.parse(req.url);
-    console.log("Url check: ", urlParts)
 
     switch(urlParts.pathname) {
         case "/":
@@ -33,7 +31,7 @@ function displayIndex(url, req, res) {
 
 }
 
-function displayMovie(url, req, res) {
+function displayMovies(url, req, res) {
     fs.readFile(__dirname + "/movies.html", function(err, data){
         res.writeHead(200, {"Content-Type": "text/html"});
         res.end(data);
